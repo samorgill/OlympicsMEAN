@@ -3,12 +3,16 @@
 let express = require("express");
 let app = express();
 
-let mongoUtil = require('./mongoUtil');
+/*let mongoUtil = require('./mongoUtil');
 mongoUtil.connect();
-
+*/
 app.use( express.static(__dirname + "/../client") );
 
-let bodyParser = require("body-parser");
+app.get("/sports", (request, response) => {
+  response.json(["Long jump", "Running"]);
+});
+
+/*let bodyParser = require("body-parser");
 let jsonParser = bodyParser.json();
 
 app.get("/sports", (request, response) => {
@@ -57,6 +61,6 @@ app.post("/sports/:name/medals", jsonParser, (request, response) => {
     response.sendStatus(201);
   });
 });
-
+*/
 
 app.listen(8181, () => console.log( "Listening on 8181" ));
