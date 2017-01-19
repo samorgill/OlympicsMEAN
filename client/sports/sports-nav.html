@@ -5,7 +5,7 @@
         <div class="card" ng-class="{'is-active': sportsCtrl.isActive(sport)}">
           <h2 class="card-title">
 
-            <a class="card-link card-link--{{ sport.toLowerCase() }}" ui-sref="sports.medals({ sportName: sport })">
+            <a class="card-link is-active card-link--{{ sport.toLowerCase() }}" ui-sref="sports.medals({ sportName: sport })">
               {{ sport }}
             </a>
 
